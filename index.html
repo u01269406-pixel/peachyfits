@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peachy Fits | Aesthetic Wear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fff5f0;
+            margin: 0;
+            padding: 0;
+            color: #5d4037;
+        }
+        header {
+            background: linear-gradient(135deg, #ffb6c1, #ffdab9);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px dashed #ff91a4;
+        }
+        h1 {
+            margin: 0;
+            color: #d81b60;
+            font-size: 28px;
+        }
+        p.tagline {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #885858;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+        .section-title {
+            font-size: 18px;
+            color: #d81b60;
+            border-bottom: 2px solid #ffb6c1;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+            border: 2px solid #ffe4e1;
+        }
+        .product-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .product-name {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 8px 0 4px;
+        }
+        .product-price {
+            color: #e91e63;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .buy-btn {
+            background-color: #ffb6c1;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .buy-btn:hover {
+            background-color: #ff69b4;
+        }
+        .checkout-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 2px solid #ffb6c1;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ffb6c1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .order-btn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #a1887f;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍑 Peachy Fits</h1>
+        <p class="tagline">Pinterest-Inspired Aesthetic Wear in Pakistan ✨</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">🌸 New Arrivals & Collections</h2>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500" alt="Top & Skirt">
+                <div class="product-name">Pink Bow Top & Skirt</div>
+                <div class="product-price">Rs. 1,800</div>
+                <button class="buy-btn" onclick="selectItem('Pink Bow Top & Skirt - Rs. 1800')">Select Fit</button>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500" alt="Aesthetic Top">
+                <div class="product-name">Soft Aesthetic Top</div>
+                <div class="product-price">Rs. 500</div>
+                <button class="buy-btn" onclick="selectItem('Soft Aesthetic Top - Rs. 500')">Select Fit</button>
+            </div>
+        </div>
+
+        <!-- Quick Checkout Form -->
+        <div class="checkout-box">
+            <h2 class="section-title" style="margin-top:0;">🛍️ Quick Order Form (COD)</h2>
+            <form id="orderForm" onsubmit="sendWhatsApp(event)">
+                <label>Selected Item:</label>
+                <input type="text" id="selectedItem" placeholder="Click 'Select Fit' above or type here" required>
+                
+                <label>Your Name:</label>
+                <input type="text" id="custName" placeholder="Enter your full name" required>
+                
+                <label>Phone Number:</label>
+                <input type="text" id="custPhone" placeholder="03XXXXXXXXX" required>
+                
+                <label>Complete Delivery Address:</label>
+                <input type="text" id="custAddress" placeholder="House #, Street, City" required>
+                
+                <p style="font-size: 13px; color: #d81b60; margin: 5px 0;">📦 Delivery Charges: <b>Rs. 200</b> (Cash on Delivery)</p>
+                
+                <button type="submit" class="order-btn">Confirm Order on WhatsApp 💌</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact Email: u01269406@gmail.com</p>
+        <p>© 2026 Peachy Fits PK. All Rights Reserved ✨</p>
+    </footer>
+
+    <script>
+        function selectItem(itemName) {
+            document.getElementById('selectedItem').value = itemName;
+            alert(itemName + ' select ho gaya hai! Neeche form fill karein.');
+        }
+
+        function sendWhatsApp(event) {
+            event.preventDefault();
+            let item = document.getElementById('selectedItem').value;
+            let name = document.getElementById('custName').value;
+            let phone = document.getElementById('custPhone').value;
+            let address = document.getElementById('custAddress').value;
+
+            // Updated WhatsApp Number with 92 country code
+            let myWhatsAppNumber = "923252324583"; 
+
+            let message = `Hello Peachy Fits! 🍑✨%0AI want to place an order:%0A%0A🛍️ Item: ${item}%0A👤 Name: ${name}%0A📞 Phone: ${phone}%0A🏠 Address: ${address}%0A📦 Delivery: Rs. 200 (COD)`;
+
+            let url = `https://wa.me/${myWhatsAppNumber}?text=${message}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
